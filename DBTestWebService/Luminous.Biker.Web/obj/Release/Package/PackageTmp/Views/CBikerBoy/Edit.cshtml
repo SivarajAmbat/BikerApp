@@ -1,0 +1,180 @@
+﻿@model Luminous.Biker.Web.Models.BikerBoyDetail
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2  class="col-lg-8 col-xs-8 col-md-8 col-sm-12 col-lg-offset-2 col-xs-offset-2 col-md-offset-2">Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="col-lg-8 col-xs-8 col-md-8 col-sm-12 col-lg-offset-2 col-xs-offset-2 col-md-offset-2">
+        <legend>Biker Boy Detail</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BB_Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BB_Code)
+            @Html.ValidationMessageFor(model => model.BB_Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BB_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BB_Name)
+            @Html.ValidationMessageFor(model => model.BB_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date_Of_Joining)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date_Of_Joining)
+            @Html.ValidationMessageFor(model => model.Date_Of_Joining)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Region)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Region)
+            @Html.ValidationMessageFor(model => model.Region)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Zonal_Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Zonal_Code)
+            @Html.ValidationMessageFor(model => model.Zonal_Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BB_State)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BB_State)
+            @Html.ValidationMessageFor(model => model.BB_State)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Town)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Town)
+            @Html.ValidationMessageFor(model => model.Town)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mob)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mob)
+            @Html.ValidationMessageFor(model => model.Mob)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZM_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZM_Name)
+            @Html.ValidationMessageFor(model => model.ZM_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZM_Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZM_Code)
+            @Html.ValidationMessageFor(model => model.ZM_Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RM_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RM_Name)
+            @Html.ValidationMessageFor(model => model.RM_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RM_Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RM_Code)
+            @Html.ValidationMessageFor(model => model.RM_Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ASM_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ASM_Name)
+            @Html.ValidationMessageFor(model => model.ASM_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ASM_Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ASM_Code)
+            @Html.ValidationMessageFor(model => model.ASM_Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cord1_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cord1_Name)
+            @Html.ValidationMessageFor(model => model.Cord1_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cord1_Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cord1_Code)
+            @Html.ValidationMessageFor(model => model.Cord1_Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cord2_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cord2_Name)
+            @Html.ValidationMessageFor(model => model.Cord2_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cord2_Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cord2_Code)
+            @Html.ValidationMessageFor(model => model.Cord2_Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Active)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Active)
+            @Html.ValidationMessageFor(model => model.Active)
+        </div>
+
+        <p>
+            <input type="submit" class="btn btn-primary" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div class="col-lg-8 col-xs-8 col-md-8 col-sm-12 col-lg-offset-2 col-xs-offset-2 col-md-offset-2">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

@@ -1,0 +1,17 @@
+﻿@using Luminous.Biker.Web.Models;
+@{
+    LuminousBikerAppEntities db = new LuminousBikerAppEntities();
+    List<BeatDetail> beatBoyDetails = db.BeatDetails.ToList();
+
+
+    if (beatBoyDetails != null && beatBoyDetails.Count > 0)
+    {
+        foreach (var item in beatBoyDetails)
+        {
+            <div class="chbBeatMain">
+                @Html.Hidden("hndBeatId", item.ID)
+                @Html.CheckBox("chbBeatId", false, new { @class = "chbBeatId" }) &nbsp; @Html.Label("lblBeatId", item.Code + " - " + item.Name)
+            </div>
+        }
+    }
+}

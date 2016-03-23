@@ -1,0 +1,144 @@
+﻿@model IEnumerable<Luminous.Biker.Web.Models.BikerBoyDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Biker Boy", "Create")
+</p>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BB_Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BB_Name)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Date_Of_Joining)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Region)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Zonal_Code)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.BB_State)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Town)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Mob)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.ZM_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZM_Code)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.RM_Name)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.RM_Code)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.ASM_Name)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.ASM_Code)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Cord1_Name)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Cord1_Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cord2_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cord2_Code)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BB_Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BB_Name)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Date_Of_Joining)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Region)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Zonal_Code)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.BB_State)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Town)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mob)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.ZM_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZM_Code)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.RM_Name)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.RM_Code)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.ASM_Name)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.ASM_Code)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cord1_Name)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Cord1_Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cord2_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cord2_Code)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,27 @@
+﻿@model System.String
+
+@using Luminous.Biker.Web.Models;
+@{
+    List<DistDealerDetail> distDealerDetails = null;
+    LuminousBikerAppEntities db = new LuminousBikerAppEntities();
+    if (Model == null || Model == "")
+    {
+        distDealerDetails = db.DistDealerDetails.OrderBy(m => m.ID).ToList();
+    }
+    else
+    {
+        distDealerDetails = db.DistDealerDetails.Where(m => m.Dis_Sap_Code.Contains(Model) || m.Dis_Name.Contains(Model)).OrderBy(m => m.ID).ToList();
+    }
+
+
+    if (distDealerDetails != null && distDealerDetails.Count > 0)
+    {
+        foreach (var item in distDealerDetails)
+        {
+            <div class="chbDistMain">
+                @Html.Hidden("hndDistId", item.ID)
+                @Html.RadioButton("rdbDistId", "", false, new { @class = "rdbDistId" }) &nbsp; @Html.Label("lblDistId", item.Dis_Sap_Code + item.Dis_Name)
+            </div>
+        }
+    }
+}

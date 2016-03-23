@@ -1,0 +1,6 @@
+c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DAL\bin\Release\DAL.dll.config
+c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DAL\bin\Release\DAL.dll
+c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DAL\bin\Release\DAL.pdb
+c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DAL\obj\Release\DAL.dll
+c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DAL\obj\Release\DAL.pdb

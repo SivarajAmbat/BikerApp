@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top navTop">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="@Url.Content("~/Images/luminous_logo_small4.png")" class="img img-responsive" style="width:80%; height:80%;" />
+                @*@Html.ActionLink("Biker Management", "Index", "Home", null, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+                @if (ViewBag.Title != "Login")
+                {
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("All Distributors", "Index", "CDistributor")</li>
+                        <li>@Html.ActionLink("All Biker Boys", "Index", "CBikerBoy")</li>
+                        <li>@Html.ActionLink("All Beats", "Index", "CBeat")</li>
+                        <li>@Html.ActionLink("All Retailers", "Index", "CRetailer")</li>
+                        <li>@Html.ActionLink("All Items", "Index", "CItem")</li>
+                        <li>@Html.ActionLink("Map Biker Boy to Distributor", "Index", "BikerBoyMappingToDistributor")</li>
+                    </ul>
+                }
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    @if (ViewBag.Title != "Register" && ViewBag.Title != "Login" && ViewBag.Title != "HomePage")
+    {
+        <div style="width:166px; margin-left:-15px; min-height:600px; background:#f2f2f2; position:fixed; left:0px; z-index:-999;"></div>
+    }
+    <div class="container body-content" style="padding-left:60px;">
+        @RenderBody()
+        <hr />
+        <footer>
+            @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

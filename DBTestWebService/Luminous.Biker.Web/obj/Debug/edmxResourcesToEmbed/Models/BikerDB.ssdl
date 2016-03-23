@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LuminousBikerAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BeatDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Contact_person" Type="varchar" MaxLength="100" />
+    <Property Name="State" Type="varchar" MaxLength="100" />
+    <Property Name="Cityarea" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="varchar" MaxLength="1000" />
+    <Property Name="Pin_Code" Type="varchar" MaxLength="20" />
+    <Property Name="Contact_Number" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active_Status" Type="bit" />
+    <Property Name="Date_Of_Joining" Type="datetime" />
+    <Property Name="Distributor_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="BeatDistributorMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_Id" Type="int" Nullable="false" />
+    <Property Name="Beat_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BikerBoyDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BB_Code" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="BB_Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Date_Of_Joining" Type="datetime" />
+    <Property Name="Region" Type="varchar" MaxLength="100" />
+    <Property Name="Zonal_Code" Type="varchar" MaxLength="100" />
+    <Property Name="BB_State" Type="varchar" MaxLength="100" />
+    <Property Name="Town" Type="varchar" MaxLength="100" />
+    <Property Name="Mob" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ZM_Name" Type="varchar" MaxLength="100" />
+    <Property Name="ZM_Code" Type="varchar" MaxLength="20" />
+    <Property Name="RM_Name" Type="varchar" MaxLength="100" />
+    <Property Name="RM_Code" Type="varchar" MaxLength="20" />
+    <Property Name="ASM_Name" Type="varchar" MaxLength="100" />
+    <Property Name="ASM_Code" Type="varchar" MaxLength="20" />
+    <Property Name="Cord1_Name" Type="varchar" MaxLength="100" />
+    <Property Name="Cord1_Code" Type="varchar" MaxLength="100" />
+    <Property Name="Cord2_Name" Type="varchar" MaxLength="100" />
+    <Property Name="Cord2_Code" Type="varchar" MaxLength="20" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="BikerDistMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_Id" Type="int" />
+    <Property Name="BikerBoy_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="DistDealerDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_Type" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Dis_Sap_Code" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Dis_Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Dis_Address1" Type="varchar" MaxLength="1000" />
+    <Property Name="Dis_Address2" Type="varchar" MaxLength="1000" />
+    <Property Name="Dis_City" Type="varchar" MaxLength="100" />
+    <Property Name="Dis_District" Type="varchar" MaxLength="100" />
+    <Property Name="Dis_State" Type="varchar" MaxLength="100" />
+    <Property Name="Dis_ContactNo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Dis_Email" Type="varchar" MaxLength="100" />
+    <Property Name="Region_code" Type="varchar" MaxLength="30" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="ActivatedBY" Type="varchar" MaxLength="100" />
+    <Property Name="ActivatedDate" Type="datetime" />
+    <Property Name="Created_On" Type="datetime" />
+    <Property Name="Updated_On" Type="datetime" />
+    <Property Name="Blocked_By" Type="varchar" MaxLength="100" />
+    <Property Name="Blocked_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Logger">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Message" Type="varchar(max)" />
+    <Property Name="StackTrace" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="MHrOtp">
+    <Key>
+      <PropertyRef Name="seqid" />
+    </Key>
+    <Property Name="seqid" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="empid" Type="varchar" MaxLength="8" />
+    <Property Name="imeinumber" Type="varchar" MaxLength="200" />
+    <Property Name="osversion" Type="varchar" MaxLength="100" />
+    <Property Name="devicename" Type="varchar" MaxLength="200" />
+    <Property Name="otp" Type="varchar" MaxLength="6" />
+    <Property Name="createdon" Type="datetime" />
+    <Property Name="otpstatus" Type="varchar" MaxLength="20" />
+    <Property Name="varifiedon" Type="datetime" />
+    <Property Name="expireon" Type="datetime" />
+    <Property Name="appversion" Type="varchar" MaxLength="50" />
+    <Property Name="appid" Type="nvarchar(max)" />
+    <Property Name="devid" Type="varchar" MaxLength="60" />
+    <Property Name="ostype" Type="varchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_Of_Visit" Type="datetime" />
+    <Property Name="Distributor_Id" Type="int" />
+    <Property Name="Beat_Id" Type="int" />
+    <Property Name="Retailer_Id" Type="int" />
+    <Property Name="Visted" Type="bit" />
+    <Property Name="Sold" Type="bit" />
+    <Property Name="Status" Type="varchar" MaxLength="100" />
+    <Property Name="Ordered_On" Type="datetime" />
+    <Property Name="Order_By" Type="varchar" MaxLength="100" />
+    <Property Name="Updated_On" Type="datetime" />
+    <Property Name="Updated_By" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="OrderItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Order_Id" Type="int" />
+    <Property Name="Item_Id" Type="int" />
+    <Property Name="Required_Quantity" Type="float" />
+    <Property Name="Supplied_Quantity" Type="float" />
+    <Property Name="Created_On" Type="datetime" />
+    <Property Name="Created_By" Type="varchar" MaxLength="100" />
+    <Property Name="Updated_On" Type="datetime" />
+    <Property Name="Updated_By" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="RetailBeatMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Beat_Id" Type="int" Nullable="false" />
+    <Property Name="Retailer_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RetailerDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Contact_person" Type="varchar" MaxLength="100" />
+    <Property Name="State" Type="varchar" MaxLength="100" />
+    <Property Name="CityArea" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="varchar" MaxLength="1000" />
+    <Property Name="Pin_Code" Type="varchar" MaxLength="20" />
+    <Property Name="Contact_Number" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active_Status" Type="bit" />
+    <Property Name="Date_Of_Joining" Type="datetime" />
+    <Property Name="Beat_Id" Type="int" />
+  </EntityType>
+  <Association Name="FK__BeatDetai__Distr__6383C8BA">
+    <End Role="DistDealerDetail" Type="Self.DistDealerDetail" Multiplicity="0..1" />
+    <End Role="BeatDetail" Type="Self.BeatDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistDealerDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BeatDetail">
+        <PropertyRef Name="Distributor_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BeatDistr__Beat___5BE2A6F2">
+    <End Role="BeatDetail" Type="Self.BeatDetail" Multiplicity="1" />
+    <End Role="BeatDistributorMapping" Type="Self.BeatDistributorMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeatDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BeatDistributorMapping">
+        <PropertyRef Name="Beat_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BeatDistr__Distr__5AEE82B9">
+    <End Role="DistDealerDetail" Type="Self.DistDealerDetail" Multiplicity="1" />
+    <End Role="BeatDistributorMapping" Type="Self.BeatDistributorMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistDealerDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BeatDistributorMapping">
+        <PropertyRef Name="Distributor_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BikerDist__Biker__0F975522">
+    <End Role="BikerBoyDetail" Type="Self.BikerBoyDetail" Multiplicity="0..1" />
+    <End Role="BikerDistMapping" Type="Self.BikerDistMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BikerBoyDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BikerDistMapping">
+        <PropertyRef Name="BikerBoy_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BikerDist__Distr__0EA330E9">
+    <End Role="DistDealerDetail" Type="Self.DistDealerDetail" Multiplicity="0..1" />
+    <End Role="BikerDistMapping" Type="Self.BikerDistMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistDealerDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BikerDistMapping">
+        <PropertyRef Name="Distributor_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderDeta__Beat___276EDEB3">
+    <End Role="BeatDetail" Type="Self.BeatDetail" Multiplicity="0..1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeatDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="Beat_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderDeta__Distr__267ABA7A">
+    <End Role="DistDealerDetail" Type="Self.DistDealerDetail" Multiplicity="0..1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistDealerDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="Distributor_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderDeta__Retai__286302EC">
+    <End Role="RetailerDetail" Type="Self.RetailerDetail" Multiplicity="0..1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RetailerDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="Retailer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderItem__Item___2F10007B">
+    <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderItem">
+        <PropertyRef Name="Item_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderItem__Order__2E1BDC42">
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="0..1" />
+    <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderItem">
+        <PropertyRef Name="Order_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RetailBea__Beat___60A75C0F">
+    <End Role="BeatDetail" Type="Self.BeatDetail" Multiplicity="1" />
+    <End Role="RetailBeatMapping" Type="Self.RetailBeatMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeatDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RetailBeatMapping">
+        <PropertyRef Name="Beat_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RetailBea__Retai__619B8048">
+    <End Role="RetailerDetail" Type="Self.RetailerDetail" Multiplicity="1" />
+    <End Role="RetailBeatMapping" Type="Self.RetailBeatMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RetailerDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RetailBeatMapping">
+        <PropertyRef Name="Retailer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RetailerD__Beat___628FA481">
+    <End Role="BeatDetail" Type="Self.BeatDetail" Multiplicity="0..1" />
+    <End Role="RetailerDetail" Type="Self.RetailerDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeatDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RetailerDetail">
+        <PropertyRef Name="Beat_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LuminousBikerAppModelStoreContainer">
+    <EntitySet Name="BeatDetail" EntityType="Self.BeatDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeatDistributorMapping" EntityType="Self.BeatDistributorMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BikerBoyDetail" EntityType="Self.BikerBoyDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BikerDistMapping" EntityType="Self.BikerDistMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DistDealerDetail" EntityType="Self.DistDealerDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logger" EntityType="Self.Logger" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MHrOtp" EntityType="Self.MHrOtp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderItem" EntityType="Self.OrderItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RetailBeatMapping" EntityType="Self.RetailBeatMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RetailerDetail" EntityType="Self.RetailerDetail" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BeatDetai__Distr__6383C8BA" Association="Self.FK__BeatDetai__Distr__6383C8BA">
+      <End Role="DistDealerDetail" EntitySet="DistDealerDetail" />
+      <End Role="BeatDetail" EntitySet="BeatDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BeatDistr__Beat___5BE2A6F2" Association="Self.FK__BeatDistr__Beat___5BE2A6F2">
+      <End Role="BeatDetail" EntitySet="BeatDetail" />
+      <End Role="BeatDistributorMapping" EntitySet="BeatDistributorMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BeatDistr__Distr__5AEE82B9" Association="Self.FK__BeatDistr__Distr__5AEE82B9">
+      <End Role="DistDealerDetail" EntitySet="DistDealerDetail" />
+      <End Role="BeatDistributorMapping" EntitySet="BeatDistributorMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BikerDist__Biker__0F975522" Association="Self.FK__BikerDist__Biker__0F975522">
+      <End Role="BikerBoyDetail" EntitySet="BikerBoyDetail" />
+      <End Role="BikerDistMapping" EntitySet="BikerDistMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BikerDist__Distr__0EA330E9" Association="Self.FK__BikerDist__Distr__0EA330E9">
+      <End Role="DistDealerDetail" EntitySet="DistDealerDetail" />
+      <End Role="BikerDistMapping" EntitySet="BikerDistMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderDeta__Beat___276EDEB3" Association="Self.FK__OrderDeta__Beat___276EDEB3">
+      <End Role="BeatDetail" EntitySet="BeatDetail" />
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderDeta__Distr__267ABA7A" Association="Self.FK__OrderDeta__Distr__267ABA7A">
+      <End Role="DistDealerDetail" EntitySet="DistDealerDetail" />
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderDeta__Retai__286302EC" Association="Self.FK__OrderDeta__Retai__286302EC">
+      <End Role="RetailerDetail" EntitySet="RetailerDetail" />
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderItem__Item___2F10007B" Association="Self.FK__OrderItem__Item___2F10007B">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="OrderItem" EntitySet="OrderItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderItem__Order__2E1BDC42" Association="Self.FK__OrderItem__Order__2E1BDC42">
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+      <End Role="OrderItem" EntitySet="OrderItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RetailBea__Beat___60A75C0F" Association="Self.FK__RetailBea__Beat___60A75C0F">
+      <End Role="BeatDetail" EntitySet="BeatDetail" />
+      <End Role="RetailBeatMapping" EntitySet="RetailBeatMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RetailBea__Retai__619B8048" Association="Self.FK__RetailBea__Retai__619B8048">
+      <End Role="RetailerDetail" EntitySet="RetailerDetail" />
+      <End Role="RetailBeatMapping" EntitySet="RetailBeatMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RetailerD__Beat___628FA481" Association="Self.FK__RetailerD__Beat___628FA481">
+      <End Role="BeatDetail" EntitySet="BeatDetail" />
+      <End Role="RetailerDetail" EntitySet="RetailerDetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

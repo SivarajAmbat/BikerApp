@@ -1,0 +1,28 @@
+﻿@model Luminous.Biker.Web.Models.Logger
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2  class="col-lg-8 col-xs-8 col-md-8 col-sm-12 col-lg-offset-2 col-xs-offset-2 col-md-offset-2">Details</h2>
+
+<fieldset class="col-lg-8 col-xs-8 col-md-8 col-sm-12 col-lg-offset-2 col-xs-offset-2 col-md-offset-2">
+    <legend>Logger</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Message)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StackTrace)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StackTrace)
+    </div>
+</fieldset>
+<p class="col-lg-8 col-xs-8 col-md-8 col-sm-12 col-lg-offset-2 col-xs-offset-2 col-md-offset-2">
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,255 @@
+﻿@model Luminous.Biker.Web.Models.BeatDistributorMapping
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="col-lg-12 col-xs-12 col-md-12 col-sm-12">Create/Update Distributor-Beat Mapping</h2>
+
+<div class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
+    <p>@Html.ActionLink("Back to List", "Index")</p>
+</div>
+<div class="col-lg-10 col-xs-10 col-md-10 col-sm-12 col-lg-offset-1 col-xs-offset-1 col-md-offset-1">
+    <div class="row">
+        <div class="col-lg-10 col-xs-10 col-md-10 col-sm-12">
+            <div class="col-md-6 divChblLeftSearch">
+                <div class="row">
+                    @Html.Label("lblSearch", "Search", new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">@Html.TextBox("txtSearchDist", null, new { @class = "txtSearchDist form-control pull-right" })</div>
+                </div>
+                <br />
+            </div>
+            <div class="col-md-1 divChblCenterSearch">
+                <div class="loader" style="display:none; text-align:center; vertical-align:central;">
+                    @*<img src="/Images/6-1.gif" />*@
+                </div>
+            </div>
+            <div class="col-md-5 divChblRightSearch">
+
+            </div>
+        </div>
+        <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
+            <div class="col-md-5 divChblLeft">
+                @Html.Partial("~/Views/BeatMappingToDistributor/_DistributorRadio.cshtml", "")
+            </div>
+            <div class="col-md-1 divChblCenter">
+                <div class="loader" style="display:none; text-align:center; vertical-align:central;">
+                    <img src="/Images/6-1.gif" />
+                </div>
+                <button type="button" disabled class="btn btn-primary btnUpdateMapping" style="position:absolute; bottom:1px; padding:6px;">Update</button>
+            </div>
+            <div class="col-md-5 divChblRight">
+                @Html.Partial("~/Views/BeatMappingToDistributor/_BeatCheck.cshtml")
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/jquery.min.js")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.divChblLeft').on("click", ".rdbDistId", function () {
+                $('.btnUpdateMapping').removeAttr('disabled')
+                var distId = $(this).parent().find('#hndDistId').val();
+                $.ajax({
+                    url: "/BeatMappingToDistributor/GetMappedBeatByDistributorId/?distId=" + distId,
+                    method: "GET",
+                    //data: JSON.stringify({ 'distId': distId }),
+                    //contentType: "application/json",
+                    //dataType: "json",
+                    success: function (result) {
+                        if (result != null && result.length > 0) {
+                            var beatMappedIds = $.parseJSON(result);
+                            var allBeatCheckBox = $('.divChblRight .chbBeatMain');
+                            $.each(allBeatCheckBox, function (index, chbDivMain) {
+                                $(chbDivMain).find('.chbBeatId').prop("checked", false);
+                                if (chbDivMain != null && $.inArray(parseInt($(chbDivMain).find('#hndBeatId').val()), beatMappedIds) > -1) {
+                                    $(chbDivMain).find('.chbBeatId').prop("checked", true);
+                                }
+                            });
+                        }
+
+                    },
+                    error: function (data) {
+                        alert("Some error occured. Please try again");
+                    },
+                    beforeSend: function () {
+                        $('.loader').show();
+                    },
+                    complete: function () {
+                        $('.loader').hide();
+                    },
+                });
+            });
+
+
+
+            //$('.rdbDistId').click(function () {
+            //    $('.btnUpdateMapping').removeAttr('disabled')
+            //    var distId = $(this).parent().find('#hndDistId').val();
+            //    $.ajax({
+            //        url: "/BeatBoyMappingToDistributor/GetMappedBeatByDistributorId/?distId=" + distId,
+            //        method: "GET",
+            //        //data: JSON.stringify({ 'distId': distId }),
+            //        //contentType: "application/json",
+            //        //dataType: "json",
+            //        success: function (result) {
+            //            if (result != null && result.length > 0) {
+            //                var beatMappedIds = $.parseJSON(result);
+            //                var allBeatCheckBox = $('.divChblRight .chbBeatMain');
+            //                $.each(allBeatCheckBox, function (index, chbDivMain) {
+            //                    $(chbDivMain).find('.chbBeatId').prop("checked", false);
+            //                    if (chbDivMain != null && $.inArray(parseInt($(chbDivMain).find('#hndBeatId').val()), beatMappedIds) > -1) {
+            //                        $(chbDivMain).find('.chbBeatId').prop("checked", true);
+            //                    }
+            //                });
+            //            }
+
+            //        },
+            //        error: function (data) {
+            //            alert("Some error occured. Please try again");
+            //        },
+            //        beforeSend: function () {
+            //            $('.loader').show();
+            //        },
+            //        complete: function () {
+            //            $('.loader').hide();
+            //        },
+            //    });
+            //});
+
+            $('.btnUpdateMapping').click(function () {
+                var allBeatCheckBoxChecked = $('.divChblRight .chbBeatMain');
+                var distRadioChecked = $('.divChblLeft .chbDistMain');
+
+                var distId = '';
+                $.each(distRadioChecked, function (index, rdbDivMain) {
+                    if (rdbDivMain != null && $(rdbDivMain).find('.rdbDistId').is(':checked')) {
+                        distId = $(rdbDivMain).find('#hndDistId').val();
+                        return false;
+                    }
+                });
+
+                var arrBeatIdChecked = Array();
+
+                $.each(allBeatCheckBoxChecked, function (index, chbDivMain) {
+                    if (chbDivMain != null && $(chbDivMain).find('.chbBeatId').is(':checked')) {
+                        arrBeatIdChecked.push($(chbDivMain).find('#hndBeatId').val());
+                    }
+                });
+
+
+                $.ajax({
+                    url: "/BeatMappingToDistributor/UpdateMappingBeatAndDistributor",
+                    method: "POST",
+                    data: JSON.stringify({ 'distId': distId, 'beatIds': arrBeatIdChecked }),
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (result) {
+                        if (result != null && result.length > 0) {
+                            alert(result);
+                        }
+                    },
+                    error: function (data) {
+                        alert("Some error occured. Please try again");
+                    },
+                    beforeSend: function () {
+                        $('.loader').show();
+                    },
+                    complete: function () {
+                        $('.loader').hide();
+                    },
+                });
+
+
+            });
+
+            $('.txtSearchDist').keydown(function (e) {
+                if (e.which != 9 && e.which != 13) {
+                    var searchParameter = $('.txtSearchDist').val();
+                    if (searchParameter != "" && searchParameter.length > 4) {
+                        $.ajax({
+                            url: "/BeatMappingToDistributor/SearchDistributor/?searchParameter=" + searchParameter,
+                            method: "GET",
+                            //data: JSON.stringify({ 'searchParameter': searchParameter }),
+                            // contentType: "application/json; charset=utf-8",
+                            // dataType: "html",
+                            success: function (result) {
+                                if (result != null && result.length > 0) {
+                                    $('.divChblLeft').html(result);
+                                }
+                            },
+                            error: function (data) {
+                                alert("Some error occured. Please try again");
+                            },
+                            beforeSend: function () {
+                                $('.loader').show();
+                            },
+                            complete: function () {
+                                $('.loader').hide();
+                            },
+                        });
+                    }
+                    else if (searchParameter == "") {
+                        $.ajax({
+                            url: "/BeatMappingToDistributor/SearchDistributor/?searchParameter=" + "",
+                            method: "GET",
+                            //data: JSON.stringify({ 'searchParameter': searchParameter }),
+                            // contentType: "application/json; charset=utf-8",
+                            // dataType: "html",
+                            success: function (result) {
+                                if (result != null && result.length > 0) {
+                                    $('.divChblLeft').html(result);
+                                }
+                            },
+                            error: function (data) {
+                                alert("Some error occured. Please try again");
+                            },
+                            beforeSend: function () {
+                                $('.loader').show();
+                            },
+                            complete: function () {
+                                $('.loader').hide();
+                            },
+                        });
+                    }
+                }
+            });
+
+            $('.txtSearchDist').blur(function (e) {
+                var searchParameter = $('.txtSearchDist').val();
+                if (searchParameter == "") {
+                    $.ajax({
+                        url: "/BeatMappingToDistributor/SearchDistributor/?searchParameter=" + "",
+                        method: "GET",
+                        //data: JSON.stringify({ 'searchParameter': searchParameter }),
+                        // contentType: "application/json; charset=utf-8",
+                        // dataType: "html",
+                        success: function (result) {
+                            if (result != null && result.length > 0) {
+                                $('.divChblLeft').html(result);
+                            }
+                        },
+                        error: function (data) {
+                            alert("Some error occured. Please try again");
+                        },
+                        beforeSend: function () {
+                            $('.loader').show();
+                        },
+                        complete: function () {
+                            $('.loader').hide();
+                        },
+                    });
+                }
+            });
+        });
+    </script>
+}
+
+
+

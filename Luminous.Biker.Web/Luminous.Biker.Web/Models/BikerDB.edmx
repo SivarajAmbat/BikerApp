@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LuminousBikerAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BeatDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Contact_person" Type="varchar" MaxLength="100" />
+          <Property Name="State" Type="varchar" MaxLength="100" />
+          <Property Name="Cityarea" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar" MaxLength="1000" />
+          <Property Name="Pin_Code" Type="varchar" MaxLength="20" />
+          <Property Name="Contact_Number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Active_Status" Type="varchar" MaxLength="30" />
+          <Property Name="Date_Of_Joining" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BeatDistributorMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Distributor_Id" Type="int" Nullable="false" />
+          <Property Name="Beat_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BikerBoyDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BB_Code" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="BB_Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Date_Of_Joining" Type="datetime" />
+          <Property Name="Region" Type="varchar" MaxLength="100" />
+          <Property Name="Zonal_Code" Type="varchar" MaxLength="100" />
+          <Property Name="BB_State" Type="varchar" MaxLength="100" />
+          <Property Name="Town" Type="varchar" MaxLength="100" />
+          <Property Name="Mob" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ZM_Name" Type="varchar" MaxLength="100" />
+          <Property Name="ZM_Code" Type="varchar" MaxLength="20" />
+          <Property Name="RM_Name" Type="varchar" MaxLength="100" />
+          <Property Name="RM_Code" Type="varchar" MaxLength="20" />
+          <Property Name="ASM_Name" Type="varchar" MaxLength="100" />
+          <Property Name="ASM_Code" Type="varchar" MaxLength="20" />
+          <Property Name="Cord1_Name" Type="varchar" MaxLength="100" />
+          <Property Name="Cord1_Code" Type="varchar" MaxLength="100" />
+          <Property Name="Cord2_Name" Type="varchar" MaxLength="100" />
+          <Property Name="Cord2_Code" Type="varchar" MaxLength="20" />
+          <Property Name="Active" Type="varchar" MaxLength="30" />
+          <Property Name="BranchManager" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="BikerDistMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Distributor_Id" Type="int" />
+          <Property Name="BikerBoy_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="DistDealerDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Customer_Type" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Dis_Sap_Code" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Dis_Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Dis_Address1" Type="varchar" MaxLength="1000" />
+          <Property Name="Dis_Address2" Type="varchar" MaxLength="1000" />
+          <Property Name="Dis_City" Type="varchar" MaxLength="100" />
+          <Property Name="Dis_District" Type="varchar" MaxLength="100" />
+          <Property Name="Dis_State" Type="varchar" MaxLength="100" />
+          <Property Name="Dis_ContactNo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Dis_Email" Type="varchar" MaxLength="100" />
+          <Property Name="Region_code" Type="varchar" MaxLength="30" />
+          <Property Name="isActive" Type="varchar" MaxLength="30" />
+          <Property Name="ActivatedBY" Type="varchar" MaxLength="100" />
+          <Property Name="ActivatedDate" Type="datetime" />
+          <Property Name="Created_On" Type="datetime" />
+          <Property Name="Updated_On" Type="datetime" />
+          <Property Name="Blocked_By" Type="varchar" MaxLength="100" />
+          <Property Name="Blocked_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemName" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Logger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Message" Type="varchar(max)" />
+          <Property Name="StackTrace" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="RetailBeatMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Beat_Id" Type="int" Nullable="false" />
+          <Property Name="Retailer_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RetailerDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Contact_person" Type="varchar" MaxLength="100" />
+          <Property Name="State" Type="varchar" MaxLength="100" />
+          <Property Name="CityArea" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar" MaxLength="1000" />
+          <Property Name="Pin_Code" Type="varchar" MaxLength="20" />
+          <Property Name="Contact_Number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Active_Status" Type="varchar" MaxLength="30" />
+          <Property Name="Date_Of_Joining" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__BeatDistr__Beat___5BE2A6F2">
+          <End Role="BeatDetail" Type="Self.BeatDetail" Multiplicity="1" />
+          <End Role="BeatDistributorMapping" Type="Self.BeatDistributorMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BeatDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BeatDistributorMapping">
+              <PropertyRef Name="Beat_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BeatDistr__Distr__5AEE82B9">
+          <End Role="DistDealerDetail" Type="Self.DistDealerDetail" Multiplicity="1" />
+          <End Role="BeatDistributorMapping" Type="Self.BeatDistributorMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DistDealerDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BeatDistributorMapping">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BikerDist__Biker__0F975522">
+          <End Role="BikerBoyDetail" Type="Self.BikerBoyDetail" Multiplicity="0..1" />
+          <End Role="BikerDistMapping" Type="Self.BikerDistMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BikerBoyDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BikerDistMapping">
+              <PropertyRef Name="BikerBoy_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BikerDist__Distr__0EA330E9">
+          <End Role="DistDealerDetail" Type="Self.DistDealerDetail" Multiplicity="0..1" />
+          <End Role="BikerDistMapping" Type="Self.BikerDistMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DistDealerDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BikerDistMapping">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RetailBea__Beat___60A75C0F">
+          <End Role="BeatDetail" Type="Self.BeatDetail" Multiplicity="1" />
+          <End Role="RetailBeatMapping" Type="Self.RetailBeatMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BeatDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RetailBeatMapping">
+              <PropertyRef Name="Beat_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RetailBea__Retai__619B8048">
+          <End Role="RetailerDetail" Type="Self.RetailerDetail" Multiplicity="1" />
+          <End Role="RetailBeatMapping" Type="Self.RetailBeatMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RetailerDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RetailBeatMapping">
+              <PropertyRef Name="Retailer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_SearchDistributore" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SearchParameter" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="LuminousBikerAppModelStoreContainer">
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BeatDetail" EntityType="Self.BeatDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BeatDistributorMapping" EntityType="Self.BeatDistributorMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BikerBoyDetail" EntityType="Self.BikerBoyDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BikerDistMapping" EntityType="Self.BikerDistMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DistDealerDetail" EntityType="Self.DistDealerDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logger" EntityType="Self.Logger" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RetailBeatMapping" EntityType="Self.RetailBeatMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RetailerDetail" EntityType="Self.RetailerDetail" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__BeatDistr__Beat___5BE2A6F2" Association="Self.FK__BeatDistr__Beat___5BE2A6F2">
+            <End Role="BeatDetail" EntitySet="BeatDetail" />
+            <End Role="BeatDistributorMapping" EntitySet="BeatDistributorMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BeatDistr__Distr__5AEE82B9" Association="Self.FK__BeatDistr__Distr__5AEE82B9">
+            <End Role="DistDealerDetail" EntitySet="DistDealerDetail" />
+            <End Role="BeatDistributorMapping" EntitySet="BeatDistributorMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BikerDist__Biker__0F975522" Association="Self.FK__BikerDist__Biker__0F975522">
+            <End Role="BikerBoyDetail" EntitySet="BikerBoyDetail" />
+            <End Role="BikerDistMapping" EntitySet="BikerDistMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BikerDist__Distr__0EA330E9" Association="Self.FK__BikerDist__Distr__0EA330E9">
+            <End Role="DistDealerDetail" EntitySet="DistDealerDetail" />
+            <End Role="BikerDistMapping" EntitySet="BikerDistMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RetailBea__Beat___60A75C0F" Association="Self.FK__RetailBea__Beat___60A75C0F">
+            <End Role="BeatDetail" EntitySet="BeatDetail" />
+            <End Role="RetailBeatMapping" EntitySet="RetailBeatMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RetailBea__Retai__619B8048" Association="Self.FK__RetailBea__Retai__619B8048">
+            <End Role="RetailerDetail" EntitySet="RetailerDetail" />
+            <End Role="RetailBeatMapping" EntitySet="RetailBeatMapping" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LuminousBikerAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BikerDistMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Distributor_Id" Type="Int32" />
+          <Property Name="BikerBoy_Id" Type="Int32" />
+          <NavigationProperty Name="BikerBoyDetail" Relationship="LuminousBikerAppModel.FK__BikerDist__Biker__0F975522" FromRole="BikerDistMapping" ToRole="BikerBoyDetail" />
+          <NavigationProperty Name="DistDealerDetail" Relationship="LuminousBikerAppModel.FK__BikerDist__Distr__0EA330E9" FromRole="BikerDistMapping" ToRole="DistDealerDetail" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Logger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StackTrace" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="LuminousBikerAppEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BikerDistMappings" EntityType="Self.BikerDistMapping" />
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="Loggers" EntityType="Self.Logger" />
+          <EntitySet Name="AspNetUsers" EntityType="LuminousBikerAppModel.AspNetUser" />
+          <FunctionImport Name="sp_SearchDistributore">
+          <Parameter Name="SearchParameter" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="BeatDistributorMappings" EntityType="LuminousBikerAppModel.BeatDistributorMapping" />
+          <EntitySet Name="RetailBeatMappings" EntityType="LuminousBikerAppModel.RetailBeatMapping" />
+          <EntitySet Name="BeatDetails" EntityType="LuminousBikerAppModel.BeatDetail" />
+          <EntitySet Name="BikerBoyDetails" EntityType="LuminousBikerAppModel.BikerBoyDetail" />
+          <EntitySet Name="DistDealerDetails" EntityType="LuminousBikerAppModel.DistDealerDetail" />
+          <EntitySet Name="RetailerDetails" EntityType="LuminousBikerAppModel.RetailerDetail" />
+          <AssociationSet Name="FK__BeatDistr__Beat___5BE2A6F2" Association="LuminousBikerAppModel.FK__BeatDistr__Beat___5BE2A6F2">
+            <End Role="BeatDetail" EntitySet="BeatDetails" />
+            <End Role="BeatDistributorMapping" EntitySet="BeatDistributorMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RetailBea__Beat___60A75C0F" Association="LuminousBikerAppModel.FK__RetailBea__Beat___60A75C0F">
+            <End Role="BeatDetail" EntitySet="BeatDetails" />
+            <End Role="RetailBeatMapping" EntitySet="RetailBeatMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BeatDistr__Distr__5AEE82B9" Association="LuminousBikerAppModel.FK__BeatDistr__Distr__5AEE82B9">
+            <End Role="DistDealerDetail" EntitySet="DistDealerDetails" />
+            <End Role="BeatDistributorMapping" EntitySet="BeatDistributorMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BikerDist__Biker__0F975522" Association="LuminousBikerAppModel.FK__BikerDist__Biker__0F975522">
+            <End Role="BikerBoyDetail" EntitySet="BikerBoyDetails" />
+            <End Role="BikerDistMapping" EntitySet="BikerDistMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BikerDist__Distr__0EA330E9" Association="LuminousBikerAppModel.FK__BikerDist__Distr__0EA330E9">
+            <End Role="DistDealerDetail" EntitySet="DistDealerDetails" />
+            <End Role="BikerDistMapping" EntitySet="BikerDistMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RetailBea__Retai__619B8048" Association="LuminousBikerAppModel.FK__RetailBea__Retai__619B8048">
+            <End Role="RetailerDetail" EntitySet="RetailerDetails" />
+            <End Role="RetailBeatMapping" EntitySet="RetailBeatMappings" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Discriminator" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BeatDistributorMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Distributor_Id" Type="Int32" Nullable="false" />
+          <Property Name="Beat_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BeatDetail" Relationship="LuminousBikerAppModel.FK__BeatDistr__Beat___5BE2A6F2" FromRole="BeatDistributorMapping" ToRole="BeatDetail" />
+          <NavigationProperty Name="DistDealerDetail" Relationship="LuminousBikerAppModel.FK__BeatDistr__Distr__5AEE82B9" FromRole="BeatDistributorMapping" ToRole="DistDealerDetail" />
+        </EntityType>
+        <EntityType Name="RetailBeatMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Beat_Id" Type="Int32" Nullable="false" />
+          <Property Name="Retailer_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BeatDetail" Relationship="LuminousBikerAppModel.FK__RetailBea__Beat___60A75C0F" FromRole="RetailBeatMapping" ToRole="BeatDetail" />
+          <NavigationProperty Name="RetailerDetail" Relationship="LuminousBikerAppModel.FK__RetailBea__Retai__619B8048" FromRole="RetailBeatMapping" ToRole="RetailerDetail" />
+        </EntityType>
+        <EntityType Name="BeatDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Contact_person" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Cityarea" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Pin_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Contact_Number" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Active_Status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Of_Joining" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="BeatDistributorMappings" Relationship="LuminousBikerAppModel.FK__BeatDistr__Beat___5BE2A6F2" FromRole="BeatDetail" ToRole="BeatDistributorMapping" />
+          <NavigationProperty Name="RetailBeatMappings" Relationship="LuminousBikerAppModel.FK__RetailBea__Beat___60A75C0F" FromRole="BeatDetail" ToRole="RetailBeatMapping" />
+        </EntityType>
+        <EntityType Name="BikerBoyDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BB_Code" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BB_Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Of_Joining" Type="DateTime" Precision="3" />
+          <Property Name="Region" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Zonal_Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BB_State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Town" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mob" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ZM_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ZM_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RM_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RM_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ASM_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ASM_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Cord1_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Cord1_Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Cord2_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Cord2_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BranchManager" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="BikerDistMappings" Relationship="LuminousBikerAppModel.FK__BikerDist__Biker__0F975522" FromRole="BikerBoyDetail" ToRole="BikerDistMapping" />
+        </EntityType>
+        <EntityType Name="DistDealerDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Customer_Type" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Dis_Sap_Code" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Dis_Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Dis_Address1" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Dis_Address2" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Dis_City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Dis_District" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Dis_State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Dis_ContactNo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Dis_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Region_code" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="isActive" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ActivatedBY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ActivatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Created_On" Type="DateTime" Precision="3" />
+          <Property Name="Updated_On" Type="DateTime" Precision="3" />
+          <Property Name="Blocked_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Blocked_Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="BeatDistributorMappings" Relationship="LuminousBikerAppModel.FK__BeatDistr__Distr__5AEE82B9" FromRole="DistDealerDetail" ToRole="BeatDistributorMapping" />
+          <NavigationProperty Name="BikerDistMappings" Relationship="LuminousBikerAppModel.FK__BikerDist__Distr__0EA330E9" FromRole="DistDealerDetail" ToRole="BikerDistMapping" />
+        </EntityType>
+        <EntityType Name="RetailerDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Contact_person" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CityArea" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Pin_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Contact_Number" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Active_Status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Of_Joining" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="RetailBeatMappings" Relationship="LuminousBikerAppModel.FK__RetailBea__Retai__619B8048" FromRole="RetailerDetail" ToRole="RetailBeatMapping" />
+        </EntityType>
+        <Association Name="FK__BeatDistr__Beat___5BE2A6F2">
+          <End Type="LuminousBikerAppModel.BeatDetail" Role="BeatDetail" Multiplicity="1" />
+          <End Type="LuminousBikerAppModel.BeatDistributorMapping" Role="BeatDistributorMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BeatDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BeatDistributorMapping">
+              <PropertyRef Name="Beat_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RetailBea__Beat___60A75C0F">
+          <End Type="LuminousBikerAppModel.BeatDetail" Role="BeatDetail" Multiplicity="1" />
+          <End Type="LuminousBikerAppModel.RetailBeatMapping" Role="RetailBeatMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BeatDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RetailBeatMapping">
+              <PropertyRef Name="Beat_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BeatDistr__Distr__5AEE82B9">
+          <End Type="LuminousBikerAppModel.DistDealerDetail" Role="DistDealerDetail" Multiplicity="1" />
+          <End Type="LuminousBikerAppModel.BeatDistributorMapping" Role="BeatDistributorMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DistDealerDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BeatDistributorMapping">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BikerDist__Biker__0F975522">
+          <End Type="LuminousBikerAppModel.BikerBoyDetail" Role="BikerBoyDetail" Multiplicity="0..1" />
+          <End Type="LuminousBikerAppModel.BikerDistMapping" Role="BikerDistMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BikerBoyDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BikerDistMapping">
+              <PropertyRef Name="BikerBoy_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BikerDist__Distr__0EA330E9">
+          <End Type="LuminousBikerAppModel.DistDealerDetail" Role="DistDealerDetail" Multiplicity="0..1" />
+          <End Type="LuminousBikerAppModel.BikerDistMapping" Role="BikerDistMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DistDealerDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BikerDistMapping">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RetailBea__Retai__619B8048">
+          <End Type="LuminousBikerAppModel.RetailerDetail" Role="RetailerDetail" Multiplicity="1" />
+          <End Type="LuminousBikerAppModel.RetailBeatMapping" Role="RetailBeatMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RetailerDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RetailBeatMapping">
+              <PropertyRef Name="Retailer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LuminousBikerAppModelStoreContainer" CdmEntityContainer="LuminousBikerAppEntities">
+          <EntitySetMapping Name="BikerDistMappings">
+            <EntityTypeMapping TypeName="LuminousBikerAppModel.BikerDistMapping">
+              <MappingFragment StoreEntitySet="BikerDistMapping">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Distributor_Id" ColumnName="Distributor_Id" />
+                <ScalarProperty Name="BikerBoy_Id" ColumnName="BikerBoy_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="LuminousBikerAppModel.Item">
+              <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Loggers">
+            <EntityTypeMapping TypeName="LuminousBikerAppModel.Logger">
+              <MappingFragment StoreEntitySet="Logger">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="LuminousBikerAppModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_SearchDistributore" FunctionName="LuminousBikerAppModel.Store.sp_SearchDistributore" />
+          <EntitySetMapping Name="BeatDistributorMappings">
+            <EntityTypeMapping TypeName="LuminousBikerAppModel.BeatDistributorMapping">
+              <MappingFragment StoreEntitySet="BeatDistributorMapping">
+                <ScalarProperty Name="Beat_Id" ColumnName="Beat_Id" />
+                <ScalarProperty Name="Distributor_Id" ColumnName="Distributor_Id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RetailBeatMappings">
+            <EntityTypeMapping TypeName="LuminousBikerAppModel.RetailBeatMapping">
+              <MappingFragment StoreEntitySet="RetailBeatMapping">
+                <ScalarProperty Name="Retailer_Id" ColumnName="Retailer_Id" />
+                <ScalarProperty Name="Beat_Id" ColumnName="Beat_Id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BeatDetails">
+            <EntityTypeMapping TypeName="LuminousBikerAppModel.BeatDetail">
+              <MappingFragment StoreEntitySet="BeatDetail">
+                <ScalarProperty Name="Date_Of_Joining" ColumnName="Date_Of_Joining" />
+                <ScalarProperty Name="Active_Status" ColumnName="Active_Status" />
+                <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Cityarea" ColumnName="Cityarea" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Contact_person" ColumnName="Contact_person" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BikerBoyDetails">
+            <EntityTypeMapping TypeName="LuminousBikerAppModel.BikerBoyDetail">
+              <MappingFragment StoreEntitySet="BikerBoyDetail">
+                <ScalarProperty Name="BranchManager" ColumnName="BranchManager" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Cord2_Code" ColumnName="Cord2_Code" />
+                <ScalarProperty Name="Cord2_Name" ColumnName="Cord2_Name" />
+                <ScalarProperty Name="Cord1_Code" ColumnName="Cord1_Code" />
+                <ScalarProperty Name="Cord1_Name" ColumnName="Cord1_Name" />
+                <ScalarProperty Name="ASM_Code" ColumnName="ASM_Code" />
+                <ScalarProperty Name="ASM_Name" ColumnName="ASM_Name" />
+                <ScalarProperty Name="RM_Code" ColumnName="RM_Code" />
+                <ScalarProperty Name="RM_Name" ColumnName="RM_Name" />
+                <ScalarProperty Name="ZM_Code" ColumnName="ZM_Code" />
+                <ScalarProperty Name="ZM_Name" ColumnName="ZM_Name" />
+                <ScalarProperty Name="Mob" ColumnName="Mob" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="BB_State" ColumnName="BB_State" />
+                <ScalarProperty Name="Zonal_Code" ColumnName="Zonal_Code" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="Date_Of_Joining" ColumnName="Date_Of_Joining" />
+                <ScalarProperty Name="BB_Name" ColumnName="BB_Name" />
+                <ScalarProperty Name="BB_Code" ColumnName="BB_Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DistDealerDetails">
+            <EntityTypeMapping TypeName="LuminousBikerAppModel.DistDealerDetail">
+              <MappingFragment StoreEntitySet="DistDealerDetail">
+                <ScalarProperty Name="Blocked_Date" ColumnName="Blocked_Date" />
+                <ScalarProperty Name="Blocked_By" ColumnName="Blocked_By" />
+                <ScalarProperty Name="Updated_On" ColumnName="Updated_On" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="ActivatedDate" ColumnName="ActivatedDate" />
+                <ScalarProperty Name="ActivatedBY" ColumnName="ActivatedBY" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="Region_code" ColumnName="Region_code" />
+                <ScalarProperty Name="Dis_Email" ColumnName="Dis_Email" />
+                <ScalarProperty Name="Dis_ContactNo" ColumnName="Dis_ContactNo" />
+                <ScalarProperty Name="Dis_State" ColumnName="Dis_State" />
+                <ScalarProperty Name="Dis_District" ColumnName="Dis_District" />
+                <ScalarProperty Name="Dis_City" ColumnName="Dis_City" />
+                <ScalarProperty Name="Dis_Address2" ColumnName="Dis_Address2" />
+                <ScalarProperty Name="Dis_Address1" ColumnName="Dis_Address1" />
+                <ScalarProperty Name="Dis_Name" ColumnName="Dis_Name" />
+                <ScalarProperty Name="Dis_Sap_Code" ColumnName="Dis_Sap_Code" />
+                <ScalarProperty Name="Customer_Type" ColumnName="Customer_Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RetailerDetails">
+            <EntityTypeMapping TypeName="LuminousBikerAppModel.RetailerDetail">
+              <MappingFragment StoreEntitySet="RetailerDetail">
+                <ScalarProperty Name="Date_Of_Joining" ColumnName="Date_Of_Joining" />
+                <ScalarProperty Name="Active_Status" ColumnName="Active_Status" />
+                <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CityArea" ColumnName="CityArea" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Contact_person" ColumnName="Contact_person" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

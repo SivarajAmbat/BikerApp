@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="OTPAuthentication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imeinumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="osversion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="devicename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="otp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="devid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ostype" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OTPAuthenticationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OTPAuthenticationResult" type="tns:inputmessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="inputmessage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="des" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BikerLogInCreateOtp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imeinumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="osversion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="devicename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appversion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BikerLogInCreateOtpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BikerLogInCreateOtpResult" type="tns:inputmessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDistributors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BikersLogInId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDistributorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDistributorsResult" type="tns:ArrayOfDistDealerDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDistDealerDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DistDealerDetail" nillable="true" type="tns:DistDealerDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DistDealerDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Customer_Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dis_Sap_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dis_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dis_Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dis_Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dis_City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dis_District" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dis_State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dis_ContactNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dis_Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region_code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isActive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivatedBY" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActivatedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_On" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Updated_On" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Blocked_By" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Blocked_Date" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeatDetails" type="tns:ArrayOfBeatDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="BikerDistMappings" type="tns:ArrayOfBikerDistMapping" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderDetails" type="tns:ArrayOfOrderDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBeatDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BeatDetail" nillable="true" type="tns:BeatDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BeatDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Distributor_Id" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contact_person" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cityarea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pin_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contact_Number" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active_Status" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date_Of_Joining" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderDetails" type="tns:ArrayOfOrderDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="RetailerDetails" type="tns:ArrayOfRetailerDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistDealerDetail" type="tns:DistDealerDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderDetail" nillable="true" type="tns:OrderDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date_Of_Visit" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Distributor_Id" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Beat_Id" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Retailer_Id" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Visted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sold" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ordered_On" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Order_By" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Updated_On" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Updated_By" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderItems" type="tns:ArrayOfOrderItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeatDetail" type="tns:BeatDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistDealerDetail" type="tns:DistDealerDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="RetailerDetail" type="tns:RetailerDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderItem" nillable="true" type="tns:OrderItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Order_Id" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Item_Id" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Required_Quantity" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Supplied_Quantity" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_On" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Created_By" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Updated_On" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Updated_By" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Item" type="tns:Item" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderDetail" type="tns:OrderDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Item">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderItems" type="tns:ArrayOfOrderItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RetailerDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Beat_Id" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contact_person" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityArea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pin_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contact_Number" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active_Status" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date_Of_Joining" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderDetails" type="tns:ArrayOfOrderDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeatDetail" type="tns:BeatDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRetailerDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RetailerDetail" nillable="true" type="tns:RetailerDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBikerDistMapping">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BikerDistMapping" nillable="true" type="tns:BikerDistMapping" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BikerDistMapping">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Distributor_Id" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BikerBoy_Id" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BikerBoyDetail" type="tns:BikerBoyDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistDealerDetail" type="tns:DistDealerDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BikerBoyDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BB_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BB_Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date_Of_Joining" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zonal_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BB_State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mob" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZM_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZM_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RM_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RM_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ASM_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ASM_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cord1_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cord1_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cord2_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cord2_Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="BikerDistMappings" type="tns:ArrayOfBikerDistMapping" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetItems">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetItemsResult" type="tns:ArrayOfItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:Item" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBeatList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BDistributorId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BikersLogInId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBeatListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBeatListResult" type="tns:ArrayOfBeatDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRetailerList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BeatId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BDistributorId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BikersLogInd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRetailerListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRetailerListResult" type="tns:ArrayOfRetailerDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRetailerListByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetailerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRetailerListByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRetailerListByNameResult" type="tns:ArrayOfRetailerDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveNewOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DestributorId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RetailerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BeatId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BikerLogInId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateOfVisit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Visisted" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sold" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Item_IdFan" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Required_QuantityFan" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Item_IdWire" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Required_QuantityWire" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Item_IdLighting" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Required_QuantityLighting" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveNewOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveNewOrderResult" type="tns:ResultMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultMessage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOrders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DestributorId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BikerLogInId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RetailerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrdersResult" type="tns:ArrayOfOrderIdBeatIdRetailId" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOrderIdBeatIdRetailId">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderIdBeatIdRetailId" nillable="true" type="tns:OrderIdBeatIdRetailId" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderIdBeatIdRetailId">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Order_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Beat_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Retailer_Code" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OrderDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OrderId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderDetailsResult" type="tns:OrderDetailed" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OrderDetailed">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Order_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dis_Sap_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dis_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Beat_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Beat_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Retailer_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Retailer_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Item_Id_Fan" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Item_Fan_Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Required_FanQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Pending_FanQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Item_Id_Wire" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Item_Wire_Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Required_WireQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Pending_WireQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Item_Id_Lighting" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Item_Light_Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Required_LightQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Pending_LightQuantity" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpateOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Order_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Item_IdFan" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Supplied_QuantityFan" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Item_IdWire" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Supplied_QuantityWire" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Item_IdLighting" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Supplied_QuantityLighting" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpateOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpateOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentDate">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentDateResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="OTPAuthenticationSoapIn">
+    <wsdl:part name="parameters" element="tns:OTPAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="OTPAuthenticationSoapOut">
+    <wsdl:part name="parameters" element="tns:OTPAuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="BikerLogInCreateOtpSoapIn">
+    <wsdl:part name="parameters" element="tns:BikerLogInCreateOtp" />
+  </wsdl:message>
+  <wsdl:message name="BikerLogInCreateOtpSoapOut">
+    <wsdl:part name="parameters" element="tns:BikerLogInCreateOtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDistributorsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDistributors" />
+  </wsdl:message>
+  <wsdl:message name="GetDistributorsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDistributorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetItems" />
+  </wsdl:message>
+  <wsdl:message name="GetItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBeatListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBeatList" />
+  </wsdl:message>
+  <wsdl:message name="GetBeatListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBeatListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRetailerListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRetailerList" />
+  </wsdl:message>
+  <wsdl:message name="GetRetailerListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRetailerListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRetailerListByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRetailerListByName" />
+  </wsdl:message>
+  <wsdl:message name="GetRetailerListByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRetailerListByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveNewOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveNewOrder" />
+  </wsdl:message>
+  <wsdl:message name="SaveNewOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveNewOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrders" />
+  </wsdl:message>
+  <wsdl:message name="GetOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="OrderDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpateOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:UpateOrder" />
+  </wsdl:message>
+  <wsdl:message name="UpateOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:UpateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentDate" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentDateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="OTPAuthentication">
+      <wsdl:input message="tns:OTPAuthenticationSoapIn" />
+      <wsdl:output message="tns:OTPAuthenticationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BikerLogInCreateOtp">
+      <wsdl:input message="tns:BikerLogInCreateOtpSoapIn" />
+      <wsdl:output message="tns:BikerLogInCreateOtpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributors">
+      <wsdl:input message="tns:GetDistributorsSoapIn" />
+      <wsdl:output message="tns:GetDistributorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItems">
+      <wsdl:input message="tns:GetItemsSoapIn" />
+      <wsdl:output message="tns:GetItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBeatList">
+      <wsdl:input message="tns:GetBeatListSoapIn" />
+      <wsdl:output message="tns:GetBeatListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRetailerList">
+      <wsdl:input message="tns:GetRetailerListSoapIn" />
+      <wsdl:output message="tns:GetRetailerListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRetailerListByName">
+      <wsdl:input message="tns:GetRetailerListByNameSoapIn" />
+      <wsdl:output message="tns:GetRetailerListByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveNewOrder">
+      <wsdl:input message="tns:SaveNewOrderSoapIn" />
+      <wsdl:output message="tns:SaveNewOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrders">
+      <wsdl:input message="tns:GetOrdersSoapIn" />
+      <wsdl:output message="tns:GetOrdersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderDetails">
+      <wsdl:input message="tns:OrderDetailsSoapIn" />
+      <wsdl:output message="tns:OrderDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpateOrder">
+      <wsdl:input message="tns:UpateOrderSoapIn" />
+      <wsdl:output message="tns:UpateOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentDate">
+      <wsdl:input message="tns:GetCurrentDateSoapIn" />
+      <wsdl:output message="tns:GetCurrentDateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OTPAuthentication">
+      <soap:operation soapAction="http://tempuri.org/OTPAuthentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BikerLogInCreateOtp">
+      <soap:operation soapAction="http://tempuri.org/BikerLogInCreateOtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributors">
+      <soap:operation soapAction="http://tempuri.org/GetDistributors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItems">
+      <soap:operation soapAction="http://tempuri.org/GetItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBeatList">
+      <soap:operation soapAction="http://tempuri.org/GetBeatList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRetailerList">
+      <soap:operation soapAction="http://tempuri.org/GetRetailerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRetailerListByName">
+      <soap:operation soapAction="http://tempuri.org/GetRetailerListByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveNewOrder">
+      <soap:operation soapAction="http://tempuri.org/SaveNewOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrders">
+      <soap:operation soapAction="http://tempuri.org/GetOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderDetails">
+      <soap:operation soapAction="http://tempuri.org/OrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpateOrder">
+      <soap:operation soapAction="http://tempuri.org/UpateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentDate">
+      <soap:operation soapAction="http://tempuri.org/GetCurrentDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OTPAuthentication">
+      <soap12:operation soapAction="http://tempuri.org/OTPAuthentication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BikerLogInCreateOtp">
+      <soap12:operation soapAction="http://tempuri.org/BikerLogInCreateOtp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributors">
+      <soap12:operation soapAction="http://tempuri.org/GetDistributors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItems">
+      <soap12:operation soapAction="http://tempuri.org/GetItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBeatList">
+      <soap12:operation soapAction="http://tempuri.org/GetBeatList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRetailerList">
+      <soap12:operation soapAction="http://tempuri.org/GetRetailerList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRetailerListByName">
+      <soap12:operation soapAction="http://tempuri.org/GetRetailerListByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveNewOrder">
+      <soap12:operation soapAction="http://tempuri.org/SaveNewOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrders">
+      <soap12:operation soapAction="http://tempuri.org/GetOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderDetails">
+      <soap12:operation soapAction="http://tempuri.org/OrderDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpateOrder">
+      <soap12:operation soapAction="http://tempuri.org/UpateOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentDate">
+      <soap12:operation soapAction="http://tempuri.org/GetCurrentDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://localhost:47897/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://localhost:47897/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

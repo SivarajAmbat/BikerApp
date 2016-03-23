@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.5, 12.75" name="BikerDataClasses">
+  <DataContextMoniker Name="/BikerDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="cb7a9610-85cc-4774-9090-d63fa44358f6" absoluteBounds="3.5, 6.125, 2, 1.2605004882812505">
+      <DataClassMoniker Name="/BikerDataClassesDataContext/BikerDistMapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d54689a4-648b-4c1c-a235-c1bd61ced3e1" absoluteBounds="3.515, 6.585, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="348151f6-9309-49b3-8722-2bb9622d6b06" absoluteBounds="9, 6.75, 2, 1.0961531575520844">
+      <DataClassMoniker Name="/BikerDataClassesDataContext/Item" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8886571-e41a-49ae-b18d-172dfad7baff" absoluteBounds="9.015, 7.21, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bca4fa65-3a4a-4f0e-81e0-b2f79f51c5e4" absoluteBounds="9, 8.875, 2, 2.7396264648437487">
+      <DataClassMoniker Name="/BikerDataClassesDataContext/OrderDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c78a9c44-bb84-42e3-b37d-5330de7872f5" absoluteBounds="9.015, 9.335, 1.9700000000000002, 2.17962646484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="025c68fb-ad05-4afc-a007-7da08cb3026b" absoluteBounds="12.5, 10.25, 2, 2.24658447265625">
+      <DataClassMoniker Name="/BikerDataClassesDataContext/OrderItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02717151-b4a8-47fe-a188-8b7c3506cd35" absoluteBounds="12.515, 10.71, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11 : 7.29807657877604); (13.5 : 7.29807657877604); (13.5 : 10.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BikerDataClassesDataContext/Item/Item_OrderItem" />
+      <nodes>
+        <classShapeMoniker Id="348151f6-9309-49b3-8722-2bb9622d6b06" />
+        <classShapeMoniker Id="025c68fb-ad05-4afc-a007-7da08cb3026b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 10.9323132324219); (12.5 : 10.9323132324219)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BikerDataClassesDataContext/OrderDetail/OrderDetail_OrderItem" />
+      <nodes>
+        <classShapeMoniker Id="bca4fa65-3a4a-4f0e-81e0-b2f79f51c5e4" />
+        <classShapeMoniker Id="025c68fb-ad05-4afc-a007-7da08cb3026b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8aaa5954-a162-4a01-92b9-75ef14165a10" absoluteBounds="4.125, 2.125, 2, 3.0683211263020831">
+      <DataClassMoniker Name="/BikerDataClassesDataContext/MHrOtp" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef83eea4-8183-4db5-835e-ab39e7aca305" absoluteBounds="4.14, 2.585, 1.9700000000000002, 2.508321126302083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f1d45daa-bd3f-4e8f-822d-49c619709a7f" absoluteBounds="2.5, 9.875, 2, 2.5752791341145831">
+      <DataClassMoniker Name="/BikerDataClassesDataContext/BeatDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9d2a572-8c0a-4ae6-9e09-c0a5d38c6f50" absoluteBounds="2.5149999999999997, 10.335, 1.9700000000000002, 2.015279134114583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 10.7448132324219); (9 : 10.7448132324219)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BikerDataClassesDataContext/BeatDetail/BeatDetail_OrderDetail" />
+      <nodes>
+        <classShapeMoniker Id="f1d45daa-bd3f-4e8f-822d-49c619709a7f" />
+        <classShapeMoniker Id="bca4fa65-3a4a-4f0e-81e0-b2f79f51c5e4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="19569c43-ad10-45fb-b5a2-643a4435a476" absoluteBounds="0.5, 5.875, 2, 2.5752791341145831">
+      <DataClassMoniker Name="/BikerDataClassesDataContext/RetailerDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f112bd3b-9baf-4ddb-9946-d3b9e44b0835" absoluteBounds="0.51500000000000057, 6.335, 1.9700000000000002, 2.015279134114583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.46875 : 8.45027913411458); (1.46875 : 9.34375); (9 : 9.34375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BikerDataClassesDataContext/RetailerDetail/RetailerDetail_OrderDetail" />
+      <nodes>
+        <classShapeMoniker Id="19569c43-ad10-45fb-b5a2-643a4435a476" />
+        <classShapeMoniker Id="bca4fa65-3a4a-4f0e-81e0-b2f79f51c5e4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7567aa7e-08fa-4907-afd1-18f892828dc1" absoluteBounds="10.375, 1.25, 2, 4.21875244140625">
+      <DataClassMoniker Name="/BikerDataClassesDataContext/BikerBoyDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a31658e3-fef9-4fe9-b933-24b0499929d0" absoluteBounds="10.39, 1.71, 1.9700000000000002, 3.65875244140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.375 : 1.65625); (3.78125 : 1.65625); (3.78125 : 6.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BikerDataClassesDataContext/BikerBoyDetail/BikerBoyDetail_BikerDistMapping" />
+      <nodes>
+        <classShapeMoniker Id="7567aa7e-08fa-4907-afd1-18f892828dc1" />
+        <classShapeMoniker Id="cb7a9610-85cc-4774-9090-d63fa44358f6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="075de340-60df-44fb-a96a-47c3904ff239" absoluteBounds="14.25, 2.375, 2, 3.8900577799479166">
+      <DataClassMoniker Name="/BikerDataClassesDataContext/DistDealerDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16d0b9d4-8200-447d-89ee-9b536a659507" absoluteBounds="14.265, 2.835, 1.9700000000000002, 3.3300577799479165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.25 : 5.79687372070312); (3.9531275 : 5.79687372070312); (3.9531275 : 6.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BikerDataClassesDataContext/DistDealerDetail/DistDealerDetail_BikerDistMapping" />
+      <nodes>
+        <classShapeMoniker Id="075de340-60df-44fb-a96a-47c3904ff239" />
+        <classShapeMoniker Id="cb7a9610-85cc-4774-9090-d63fa44358f6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.40625 : 6.26505777994792); (15.40625 : 9.53125); (13.5833333333333 : 9.53125 : JumpStart); (13.4166666666667 : 9.53125 : JumpEnd); (11 : 9.53125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BikerDataClassesDataContext/DistDealerDetail/DistDealerDetail_OrderDetail" />
+      <nodes>
+        <classShapeMoniker Id="075de340-60df-44fb-a96a-47c3904ff239" />
+        <classShapeMoniker Id="bca4fa65-3a4a-4f0e-81e0-b2f79f51c5e4" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\inetpub\wwwroot\BikerManagement</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Themes/Responsive/css/bootstrap-theme.css">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/css/bootstrap-theme.css.map">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/css/bootstrap-theme.min.css">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/css/bootstrap-theme.min.css.map">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/css/bootstrap.css">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/css/bootstrap.css.map">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/css/bootstrap.min.css">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/css/bootstrap.min.css.map">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/css/ie10-viewport-bug-workaround.css">
+      <publishTime>03/16/2016 12:05:35</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/js/bootstrap.js">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/js/bootstrap.min.js">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/js/ie-emulation-modes-warning.js">
+      <publishTime>03/16/2016 12:04:48</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/js/ie10-viewport-bug-workaround.js">
+      <publishTime>03/16/2016 12:04:48</publishTime>
+    </File>
+    <File Include="App_Themes/Responsive/js/npm.js">
+      <publishTime>03/16/2016 11:59:10</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>03/17/2016 03:20:28</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/16/2016 11:23:08</publishTime>
+    </File>
+    <File Include="bin/Luminous.Biker.Web.dll">
+      <publishTime>03/19/2016 15:50:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>03/16/2016 11:21:25</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>03/16/2016 11:21:30</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/17/2016 03:20:28</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>03/16/2016 11:21:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>03/16/2016 11:21:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>03/16/2016 11:21:31</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>03/16/2016 11:21:31</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>03/16/2016 11:21:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>03/17/2016 03:20:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>03/16/2016 11:21:27</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>03/16/2016 11:21:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>03/16/2016 11:21:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>03/16/2016 11:21:29</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>03/17/2016 03:20:28</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/16/2016 11:21:21</publishTime>
+    </File>
+    <File Include="Images/6-1.gif">
+      <publishTime>03/19/2016 13:20:33</publishTime>
+    </File>
+    <File Include="Models/BikerDB.edmx.diagram">
+      <publishTime>03/18/2016 08:38:18</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/17/2016 03:20:32</publishTime>
+    </File>
+    <File Include="Script/jquery.min.js">
+      <publishTime>03/17/2016 03:27:45</publishTime>
+    </File>
+    <File Include="Style/blog.css">
+      <publishTime>03/19/2016 16:06:15</publishTime>
+    </File>
+    <File Include="Views/Account/LogOn.cshtml">
+      <publishTime>03/19/2016 08:09:35</publishTime>
+    </File>
+    <File Include="Views/BeatMappintToDistributor/Create.cshtml">
+      <publishTime>03/17/2016 03:24:17</publishTime>
+    </File>
+    <File Include="Views/BeatMappintToDistributor/Delete.cshtml">
+      <publishTime>03/17/2016 03:04:19</publishTime>
+    </File>
+    <File Include="Views/BeatMappintToDistributor/Details.cshtml">
+      <publishTime>03/17/2016 03:04:17</publishTime>
+    </File>
+    <File Include="Views/BeatMappintToDistributor/Edit.cshtml">
+      <publishTime>03/17/2016 03:24:17</publishTime>
+    </File>
+    <File Include="Views/BeatMappintToDistributor/Index.cshtml">
+      <publishTime>03/17/2016 03:42:05</publishTime>
+    </File>
+    <File Include="Views/BikerBoyMappingToDistributor/Create.cshtml">
+      <publishTime>03/19/2016 15:32:32</publishTime>
+    </File>
+    <File Include="Views/BikerBoyMappingToDistributor/Create1.cshtml">
+      <publishTime>03/19/2016 11:26:55</publishTime>
+    </File>
+    <File Include="Views/BikerBoyMappingToDistributor/Delete.cshtml">
+      <publishTime>03/19/2016 07:19:36</publishTime>
+    </File>
+    <File Include="Views/BikerBoyMappingToDistributor/Details.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/BikerBoyMappingToDistributor/Edit.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/BikerBoyMappingToDistributor/Index.cshtml">
+      <publishTime>03/19/2016 15:33:50</publishTime>
+    </File>
+    <File Include="Views/BikerBoyMappingToDistributor/_BikerCheck.cshtml">
+      <publishTime>03/19/2016 12:28:30</publishTime>
+    </File>
+    <File Include="Views/BikerBoyMappingToDistributor/_DistributorRadio.cshtml">
+      <publishTime>03/19/2016 14:43:14</publishTime>
+    </File>
+    <File Include="Views/CBeat/Create.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CBeat/Delete.cshtml">
+      <publishTime>03/19/2016 07:19:36</publishTime>
+    </File>
+    <File Include="Views/CBeat/Details.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CBeat/Edit.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CBeat/Index.cshtml">
+      <publishTime>03/19/2016 15:47:22</publishTime>
+    </File>
+    <File Include="Views/CBikerBoy/Create.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CBikerBoy/Delete.cshtml">
+      <publishTime>03/19/2016 07:19:36</publishTime>
+    </File>
+    <File Include="Views/CBikerBoy/Details.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CBikerBoy/Edit.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CBikerBoy/Index.cshtml">
+      <publishTime>03/19/2016 07:03:54</publishTime>
+    </File>
+    <File Include="Views/CDistributor/Create.cshtml">
+      <publishTime>03/19/2016 07:21:50</publishTime>
+    </File>
+    <File Include="Views/CDistributor/Delete.cshtml">
+      <publishTime>03/19/2016 07:19:36</publishTime>
+    </File>
+    <File Include="Views/CDistributor/Details.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CDistributor/Edit.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CDistributor/Index.cshtml">
+      <publishTime>03/19/2016 07:04:48</publishTime>
+    </File>
+    <File Include="Views/CItem/Create.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CItem/Delete.cshtml">
+      <publishTime>03/19/2016 07:19:36</publishTime>
+    </File>
+    <File Include="Views/CItem/Details.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CItem/Edit.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CItem/Index.cshtml">
+      <publishTime>03/19/2016 07:04:48</publishTime>
+    </File>
+    <File Include="Views/CRetailer/Create.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CRetailer/Delete.cshtml">
+      <publishTime>03/19/2016 07:19:36</publishTime>
+    </File>
+    <File Include="Views/CRetailer/Details.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CRetailer/Edit.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/CRetailer/Index.cshtml">
+      <publishTime>03/19/2016 07:04:48</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>03/17/2016 03:58:56</publishTime>
+    </File>
+    <File Include="Views/Logger/Delete.cshtml">
+      <publishTime>03/19/2016 07:20:00</publishTime>
+    </File>
+    <File Include="Views/Logger/Details.cshtml">
+      <publishTime>03/19/2016 07:02:27</publishTime>
+    </File>
+    <File Include="Views/Logger/Index.cshtml">
+      <publishTime>03/19/2016 07:04:47</publishTime>
+    </File>
+    <File Include="Views/RetailerToBeatMapping/Create.cshtml">
+      <publishTime>03/17/2016 03:24:17</publishTime>
+    </File>
+    <File Include="Views/RetailerToBeatMapping/Delete.cshtml">
+      <publishTime>03/17/2016 03:05:04</publishTime>
+    </File>
+    <File Include="Views/RetailerToBeatMapping/Details.cshtml">
+      <publishTime>03/17/2016 03:05:02</publishTime>
+    </File>
+    <File Include="Views/RetailerToBeatMapping/Edit.cshtml">
+      <publishTime>03/17/2016 03:24:17</publishTime>
+    </File>
+    <File Include="Views/RetailerToBeatMapping/Index.cshtml">
+      <publishTime>03/17/2016 03:41:52</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>03/19/2016 16:24:49</publishTime>
+    </File>
+    <File Include="Views/Shared/_MenuItems.cshtml">
+      <publishTime>03/17/2016 03:14:44</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>03/19/2016 09:56:19</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>03/16/2016 12:00:30</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/19/2016 15:50:11</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

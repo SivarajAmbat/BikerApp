@@ -1,0 +1,29 @@
+﻿@model Luminous.Biker.Web.Models.BikerDistMapping
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2  class="col-lg-12 col-xs-12 col-md-12 col-sm-12">Details</h2>
+
+<fieldset class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
+    <legend>Biker Distributor Mapping</legend>
+
+    <div class="display-label col-md-2">
+         @Html.DisplayNameFor(model => model.DistDealerDetail.Customer_Type)
+    </div>
+    <div class="display-field col-md-4">
+        @Html.DisplayFor(model => model.DistDealerDetail.Customer_Type)
+    </div>
+
+    <div class="display-label col-md-2">
+         @Html.DisplayNameFor(model => model.BikerBoyDetail.BB_Code)
+    </div>
+    <div class="display-field col-md-4">
+        @Html.DisplayFor(model => model.BikerBoyDetail.BB_Code)
+    </div>
+</fieldset>
+<p class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

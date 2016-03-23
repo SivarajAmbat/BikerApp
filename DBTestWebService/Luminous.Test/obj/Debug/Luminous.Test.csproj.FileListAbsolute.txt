@@ -1,0 +1,8 @@
+C:\Users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\Luminous.Test\bin\Debug\Luminous.Test.pdb
+C:\Users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\Luminous.Test\obj\Debug\Luminous.Test.pdb
+C:\Users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\Luminous.Test\obj\Debug\Luminous.Test.csprojResolveAssemblyReference.cache
+C:\Users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\Luminous.Test\bin\Debug\Luminous.Test.exe.config
+C:\Users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\Luminous.Test\bin\Debug\Luminous.Test.exe
+C:\Users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\Luminous.Test\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\Luminous.Test\bin\Debug\Newtonsoft.Json.xml
+C:\Users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\Luminous.Test\obj\Debug\Luminous.Test.exe

@@ -1,0 +1,34 @@
+﻿@model Luminous.Biker.Web.Models.Item
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2  class="col-lg-8 col-xs-8 col-md-8 col-sm-12 col-lg-offset-2 col-xs-offset-2 col-md-offset-2">Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="col-lg-8 col-xs-8 col-md-8 col-sm-12 col-lg-offset-2 col-xs-offset-2 col-md-offset-2">
+        <legend>Item</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ItemName)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ItemName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ItemName)
+        </div>
+
+        <p>
+            <input type="submit" class="btn btn-primary" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div class="col-lg-8 col-xs-8 col-md-8 col-sm-12 col-lg-offset-2 col-xs-offset-2 col-md-offset-2">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

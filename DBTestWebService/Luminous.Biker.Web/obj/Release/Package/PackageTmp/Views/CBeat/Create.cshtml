@@ -1,0 +1,114 @@
+﻿@model Luminous.Biker.Web.Models.BeatDetail
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2  class="col-lg-8 col-xs-8 col-md-8 col-sm-12 col-lg-offset-2 col-xs-offset-2 col-md-offset-2">Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="col-lg-8 col-xs-8 col-md-8 col-sm-12 col-lg-offset-2 col-xs-offset-2 col-md-offset-2">
+        <legend>Beat Detail</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Code)
+            @Html.ValidationMessageFor(model => model.Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Distributor_Id, "DistDealerDetail")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Distributor_Id", String.Empty)
+            @Html.ValidationMessageFor(model => model.Distributor_Id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Contact_person)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Contact_person)
+            @Html.ValidationMessageFor(model => model.Contact_person)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.State)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.State)
+            @Html.ValidationMessageFor(model => model.State)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cityarea)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cityarea)
+            @Html.ValidationMessageFor(model => model.Cityarea)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Pin_Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pin_Code)
+            @Html.ValidationMessageFor(model => model.Pin_Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Contact_Number)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Contact_Number)
+            @Html.ValidationMessageFor(model => model.Contact_Number)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Active_Status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Active_Status)
+            @Html.ValidationMessageFor(model => model.Active_Status)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date_Of_Joining)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date_Of_Joining)
+            @Html.ValidationMessageFor(model => model.Date_Of_Joining)
+        </div>
+
+        <p>
+            <input type="submit" class="btn btn-primary" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div class="col-lg-8 col-xs-8 col-md-8 col-sm-12 col-lg-offset-2 col-xs-offset-2 col-md-offset-2">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
