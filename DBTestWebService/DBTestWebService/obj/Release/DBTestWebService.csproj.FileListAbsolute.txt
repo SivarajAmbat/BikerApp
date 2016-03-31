@@ -1,8 +1,0 @@
-c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DBTestWebService\bin\DBTestWebService.dll.config
-c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DBTestWebService\bin\DBTestWebService.dll
-c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DBTestWebService\bin\DBTestWebService.pdb
-c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DBTestWebService\obj\Release\DBTestWebService.dll
-c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DBTestWebService\obj\Release\DBTestWebService.pdb
-c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DBTestWebService\bin\DAL.dll
-c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DBTestWebService\bin\DAL.pdb
-c:\users\tftopvuwin\documents\visual studio 2013\Projects\DBTestWebService\DBTestWebService\obj\Release\DBTestWebService.csprojResolveAssemblyReference.cache
